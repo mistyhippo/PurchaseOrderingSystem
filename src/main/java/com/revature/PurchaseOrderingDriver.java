@@ -1,4 +1,4 @@
-package com.revature.purchase.ordering.system;
+package com.revature;
 //import java.util.List;
 
 public class PurchaseOrderingDriver {
