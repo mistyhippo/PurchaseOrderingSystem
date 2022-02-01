@@ -8,7 +8,6 @@ public class Product {
     private int productId;
     private String productName;
     private float price;
-    private String name;
     private Person admin;
     private List<Person> buyers;
     private List<Person> sellers;
@@ -18,11 +17,19 @@ public class Product {
         this.sellers = new ArrayList<>();
     }
 
-    public Product(int productId, String productName, float price, String name, Person admin, List<Person> buyers, List<Person> sellers) {
+    public Product(int productId, String productName, float price){
         this.productId = productId;
         this.productName = productName;
         this.price = price;
-        this.name = name;
+        this.buyers = new ArrayList<>();
+        this.sellers = new ArrayList<>();
+
+    }
+
+    public Product(int productId, String productName, float price,Person admin, List<Person> buyers, List<Person> sellers) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
         this.admin = admin;
         this.buyers = buyers;
         this.sellers = sellers;
@@ -50,14 +57,6 @@ public class Product {
 
     public void setPrice(float price) {
         this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Person getAdmin() {
@@ -90,7 +89,6 @@ public class Product {
                 "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", price=" + price +
-                ", name='" + name + '\'' +
                 ", admin=" + admin +
                 ", buyers=" + buyers +
                 ", sellers=" + sellers +

@@ -1,6 +1,6 @@
 package com.revature.models;
+import java.sql.Date;
 
-import java.util.Date;
 
 public class Order {
 
@@ -9,7 +9,7 @@ public class Order {
     private float total;
     private boolean orderComplete;
     private boolean accountActive;
-    private Date orderDate;
+    private java.sql.Date orderDate;
 
     public Order() {
     }

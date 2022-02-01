@@ -7,9 +7,17 @@ public class Person {
     private String first;
     private String last;
     private String username;
+    private String password;
 
-    public int getPersonId() {
-        return personId;
+    public Person() {
+    }
+
+    public Person(Type type, String first, String last, String username, String password) {
+        this.type = type;
+        this.first = first;
+        this.last = last;
+        this.username = username;
+        this.password = password;
     }
 
     public Person(int personId, Type type, String first, String last, String username, String password) {
@@ -23,6 +31,10 @@ public class Person {
 
     public void setPersonId(int personId) {
         this.personId = personId;
+    }
+
+    public int getPersonId() {
+        return personId;
     }
 
     public Type getType() {
@@ -65,10 +77,7 @@ public class Person {
         this.password = password;
     }
 
-    private String password;
 
-    public Person() {
-    }
 
     @Override
     public String toString() {
