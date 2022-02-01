@@ -22,7 +22,7 @@ public class PersonDaoImpl implements PersonDao {
 
             Connection con = conUtil.getConnection();
 
-            String sql = "INSERT INTO people VALUES (" + p.getPersonId() + "," + (p.getType().ordinal()) + ",'" + p.getFirst() + "','" + p.getLast() + "','" + p.getUsername() + "','" + p.getPassword() + "')";
+            String sql = "INSERT INTO person VALUES (" + p.getPersonId() + "," + (p.getType().ordinal()) + ",'" + p.getFirst() + "','" + p.getLast() + "','" + p.getUsername() + "','" + p.getPassword() + "')";
 
             System.out.println(sql);
 
@@ -45,7 +45,7 @@ public class PersonDaoImpl implements PersonDao {
 
             Connection con = conUtil.getConnection();
 
-            String sql = "SELECT * FROM people WHERE id =" + id;
+            String sql = "SELECT * FROM person WHERE id =" + id;
 
             Statement s = con.createStatement();
 
@@ -70,7 +70,7 @@ public class PersonDaoImpl implements PersonDao {
 
             Connection con = conUtil.getConnection();
 
-            String sql = "SELECT * FROM people";
+            String sql = "SELECT * FROM person";
 
             Statement s = con.createStatement();
 
@@ -94,7 +94,7 @@ public class PersonDaoImpl implements PersonDao {
         try{
             Connection con = conUtil.getConnection();
 
-            String sql = "UPDATE people SET type=" + (p.getType().ordinal()) + ","+
+            String sql = "UPDATE person SET type=" + (p.getType().ordinal()) + ","+
                     "first_name='" + p.getFirst() +"'," +
                     "last_name='" + p.getLast() + "'," +
                     "email='" + p.getUsername() + "'," +
@@ -116,7 +116,7 @@ public class PersonDaoImpl implements PersonDao {
         try{
             Connection con = conUtil.getConnection();
 
-            String sql = "DELETE FROM people WHERE id=" + p.getPersonId();
+            String sql = "DELETE FROM person WHERE id=" + p.getPersonId();
 
             Statement s = con.createStatement();
 
